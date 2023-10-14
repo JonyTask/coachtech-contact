@@ -6,14 +6,14 @@ body{
 }
 
 header{
-    padding:20px 40px;
+    padding:10px 40px;
     text-align:center;
     position:relative;
     border-bottom:1px solid #deb887;
 }
 
 header p{
-    font-size:30px;
+    font-size:25px;
     color:#deb887;
 }
 

@@ -1,0 +1,36 @@
+*{
+    color:#deb887;
+}
+
+h1{
+    display:block;
+    text-align:center;
+}
+
+.confirm-table{
+    width:80%;
+    margin:0 auto;
+}
+
+table{
+    width:90%
+}
+
+tr{
+    margin:10px 0;
+}
+
+th{
+    text-align:left;
+    width:40%;
+    background:#deb887;
+    color:#fff;
+    border:solid 1px #c0c0c0;
+}
+
+td{
+    width:550px;
+    border:solid 1px #c0c0c0;
+}
+
+
