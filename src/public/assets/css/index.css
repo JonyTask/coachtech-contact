@@ -1,0 +1,27 @@
+*{
+    color:#deb887;
+}
+
+h1{
+    display:block;
+    text-align:center;
+}
+
+.contact-area{
+    width:80%;
+    margin:0 auto;
+}
+
+
+th{
+    text-align:left;
+    width:40%;
+}
+
+th span{
+    color:red;
+}
+
+td{
+    width:60%;
+}

@@ -1,0 +1,22 @@
+body{
+    background:#fff;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+header{
+    padding:20px 40px;
+    text-align:center;
+    position:relative;
+    border-bottom:1px solid #deb887;
+}
+
+header p{
+    font-size:30px;
+    color:#deb887;
+}
+
+main{
+    padding:30px 50px;
+}
