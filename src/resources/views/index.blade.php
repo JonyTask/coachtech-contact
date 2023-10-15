@@ -10,6 +10,11 @@
     <form action="/confirm" method="post">
         @csrf
         <div class="form-area">
+            @if($errors->any())
+                @foreach($errors->all() as $error)
+                    {{$error}}
+                @endforeach
+            @endif
             <table cellpadding="10">
                 <tr>
                     <th>お名前<span>※</span></th>
@@ -36,15 +41,15 @@
                     <th>性別<span>※</span></th>
                     <td id="gender">
                         <div class="radio-item">
-                            <input type="radio" name="gender" value="1" checked>
+                            <input type="radio" name="gender" value="男性" checked>
                             <label>男性</label>
                         </div>
                         <div class="radio-item">
-                            <input type="radio" name="gender" value="2">
+                            <input type="radio" name="gender" value="女性">
                             <label>女性</label>
                         </div>
                         <div class="radio-item">
-                            <input type="radio" name="gender" value="3">
+                            <input type="radio" name="gender" value="その他">
                             <label>その他</label>
                         </div></br>
                         <div class="error-message">
@@ -69,11 +74,11 @@
                     <th>電話番号<span>※</span></th>
                     <td id="tel">
                         <div id="tel-align">
-                        <input type="tel" name="first-three" value="{{old('first-three')}}">
+                        <input  name="first-three" value="{{old('first-three')}}">
                         <span>-</span>
-                        <input type="tel" name="second-three" value="{{old('second-three')}}">
+                        <input  name="second-three" value="{{old('second-three')}}">
                         <span>-</span>
-                        <input type="tel" name="third-three" value="{{old('third-three')}}">
+                        <input  name="third-three" value="{{old('third-three')}}">
                         </div>
                     <div class="error-message">
                         @error('first-three')

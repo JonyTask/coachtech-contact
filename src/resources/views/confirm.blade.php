@@ -11,25 +11,25 @@
             <tr>
                 <th>お名前</th>
                 <td>
-                    <input name="fullname" type="text" value="{{$contact['family-name'].$contact['first-name']}}" readonly>
+                    <input name="fullname" type="text" value="{{$fullname}}" readonly>
                 </td>
             </tr>
             <tr>
                 <th>性別</th>
                 <td>
-                    <input name="gender" readonly>
+                    <input name="gender" value="{{$contact['gender']}}" readonly>
                 </td>
             </tr>
             <tr>
                 <th>メールアドレス</th>
                 <td>
-                    <input name="email" type="email" value="{{$contact['email]}}" readonly>
+                    <input name="email" type="email" value="{{$contact['email']}}" readonly>
                 </td>
             </tr>
             <tr>
                 <th>電話番号</th>
                 <td>
-                    <input name="tel" type="tel" value="{{$contact['first-three']}}.{{$contact['second-three']}}.{{$contact['third-three']}}" readonly>
+                    <input name="tel" type="tel" value="{{$tel}}" readonly>
                 </td>
             </tr>
             <tr>
@@ -47,7 +47,7 @@
             <tr>
                 <th>お問い合わせの種類</th>
                 <td>
-                    <input name="category_id" type="text" value="" readonly>
+                    <input name="category_id" type="text" value="{{$category_content}}" readonly>
                 </td>
             </tr>
             <tr>
