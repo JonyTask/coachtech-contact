@@ -115,11 +115,11 @@
                     <td id="category">
                         <select name="category_id" value="{{old('category_id')}}">
                             <option selected disabled>選択してください</option>
-                            <option value="1">1.商品のお届けについて</option>
-                            <option value="2">2.商品の交換について</option>
-                            <option value="3">3.商品トラブル</option>
-                            <option value="4">4.ショップへのお問い合わせ</option>
-                            <option value="5">5.その他</option>
+                            <option value="商品のお届けについて">1.商品のお届けについて</option>
+                            <option value="商品の交換について">2.商品の交換について</option>
+                            <option value="商品トラブル">3.商品トラブル</option>
+                            <option value="ショップへのお問い合わせ">4.ショップへのお問い合わせ</option>
+                            <option value="その他">5.その他</option>
                         </select>
                     </td>
                 </tr>

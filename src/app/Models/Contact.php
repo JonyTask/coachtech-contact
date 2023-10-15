@@ -10,7 +10,10 @@ class Contact extends Model
     use HasFactory;
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo('App\Models\Category');
     }
 
+    public function getContent(){
+        return optional($this->category)->content;
+    }
 }

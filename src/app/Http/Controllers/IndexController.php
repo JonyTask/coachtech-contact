@@ -20,11 +20,11 @@ class IndexController extends Controller
         $firstTel=implode(",",$request->only(['first-three']));
         $secondTel=implode(",",$request->only(['second-three']));
         $thirdTel=implode(",",$request->only(['third-three']));
-        $tel=$firstTel.$secondTel.$thirdTel;
+        $tell=$firstTel.$secondTel.$thirdTel;
 
-        $contact=$request->only(['gender','email','first-three','second-three','third-three','address','category_id','building','detail']);
+        $contact=$request->only(['gender','email','first-three','second-three','third-three','address','building','category_id','detail']);
 
 
-        return view('confirm',['contact'=>$contact,'fullname'=>$fullName,'tel'=>$tel,'category_content'=>$category_content]);
+        return view('confirm',['contact'=>$contact,'fullname'=>$fullName,'tell'=>$tell]);
     }
 }
