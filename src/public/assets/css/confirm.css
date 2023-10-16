@@ -1,10 +1,13 @@
 *{
     color:#deb887;
+    font-size:20px;
 }
 
 h1{
     display:block;
     text-align:center;
+    font-size:30px;
+    margin-bottom:30px;
 }
 
 .confirm-table{
@@ -13,11 +16,11 @@ h1{
 }
 
 .read-input{
-    width:100%;
+    width:80%;
     height:100%;
     outline:none;
     border:none;
-    padding:10px 15px;
+    padding:15px 30px;
 }
 
 table{
@@ -34,6 +37,8 @@ th{
     background:#deb887;
     color:#fff;
     border:solid 1px #c0c0c0;
+    padding-left:50px;
+    align-items:center;
 }
 
 td{
@@ -41,5 +46,36 @@ td{
     border:solid 1px #c0c0c0;
 }
 
+textarea{
+    width:80%;
+    padding:15px 30px;
+    font-family:sans-serif;
+    resize:none;
+    outline:none;
+    border:none;
+
+}
+
+.buttons-area{
+    margin-top:40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.toThanks{
+    outline:none;
+    border:none;
+    padding:10px 30px;
+    color:#fff;
+    background:#8b4513;
+    height:unset;
+    margin-right:30px;
+}
+
+.goBack{
+    color:#8b4513;
+}
 
 

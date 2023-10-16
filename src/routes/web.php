@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::get('/',[IndexController::class,'index']);
 
 Route::post('/confirm',[IndexController::class,'confirm']);
+
+Route::post('/thanks',[IndexController::class,'store']);
+
+Route::get('/admin',[IndexController::class,'admin']);
