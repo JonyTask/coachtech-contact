@@ -1,8 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 
 @section('css')
     <link rel="stylesheet" href="{{asset('assets/css/admin.css')}}">
+@endsection
+
+@section('header')
+    @if(Auth::check())
+    <a href="/logout">Logout</a>
+    @endif
 @endsection
 
 @section('content')

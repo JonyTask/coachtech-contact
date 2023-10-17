@@ -108,20 +108,4 @@ class IndexController extends Controller
     public function search(Request $request){
 
     }
-
-    public function registerShow(){
-        return view('auth.register');
-    }
-
-    public function register(RegisterRequest $request){
-
-    }
-
-    public function loginShow(){
-        return view('auth.login');
-    }
-
-    public function login(LoginRequest $request){
-
-    }
 }

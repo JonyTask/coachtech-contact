@@ -1,0 +1,39 @@
+body{
+    background:#fff;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+header{
+    padding:10px 40px;
+    text-align:center;
+    position:relative;
+    border-bottom:1px solid #deb887;
+    background:#fff;
+}
+
+header p{
+    font-size:25px;
+    color:#deb887;
+}
+
+.link-area{
+    position:absolute;
+    top:40%;
+    right:10%;
+    font-size:15px;
+}
+
+.link-area a{
+    display:inline-block;
+    padding:10px 20px;
+    background:#f5f5f5;
+    color:#deb887;
+    text-decoration:none;
+    border:solid 1px #deb887;
+}
+
+main{
+    padding:30px 50px;
+}

@@ -25,10 +25,11 @@ Route::post('/confirm',[IndexController::class,'confirm']);
 
 Route::post('/thanks',[IndexController::class,'store']);
 
-Route::get('/admin',[IndexController::class,'admin']);
+Route::middleware('auth')->group(function(){Route::get('/admin', [IndexController::class, 'admin']);});
 
 Route::get('/admin/search',[IndexController::class,'search']);
 
-Route::get('/register',[IndexController::class,'registerShow']);
+Route::get('/register',[AuthController::class,'registerShow']);
 
-Route::get('/login',[IndexController::class,'loginShow']);
+Route::get('/login',[AuthController::class,'loginShow'])->name('login');
+

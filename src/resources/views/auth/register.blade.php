@@ -1,7 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('css')
     <link rel="stylesheet" href="{{asset('assets/css/register.css')}}">
+@endsection
+
+@section('header')
+    <a href="/login">Login</a>
 @endsection
 
 @section('content')
@@ -34,6 +38,15 @@
             @error('password')
                 {{$message}}
             @enderror
+            </div>
+        </div>
+        <div class="register-item">
+            <p>確認用パスワード</p>
+            <input name="password_confirmation" type="password" placeholder="確認用パスワード">
+            <div class="error-message">
+                @error('password_confirmation')
+                    {{$message}}
+                @enderror
             </div>
         </div>
         <div class="register-button">
