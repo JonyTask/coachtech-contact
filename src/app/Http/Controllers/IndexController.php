@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
+use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\LoginRequest;
 use App\Models\Category;
 use App\Models\Contact;
 
@@ -27,18 +29,6 @@ class IndexController extends Controller
     }
 
     public function confirm(ContactRequest $request){
-
-        $request->session()->put('family-name',$request->only(['family-name']));
-        $request->session()->put('first-name',$request->only(['first-name']));
-        $request->session()->put('gender',$request->only(['gender']));
-        $request->session()->put('email',$request->only(['email']));
-        $request->session()->put('first-three',$request->only(['first-three']));
-        $request->session()->put('second-three',$request->only(['second-three']));
-        $request->session()->put('third-three',$request->only(['third-three']));
-        $request->session()->put('address',$request->only(['address']));
-        $request->session()->put('building',$request->only(['building']));
-        $request->session()->put('category_id',$request->only(['category_id']));
-        $request->session()->put('detail',$request->only(['detail']));
 
         $familyName=implode(",",$request->only(['family-name']));
         $firstName=implode(",",$request->only(['first-name']));
@@ -86,6 +76,52 @@ class IndexController extends Controller
     }
 
     public function admin(){
-        return view('admin');
+        $contacts=Contact::Paginate(10);
+
+        for($i=0;$i<count($contacts);$i++){
+            $contact_gender=$contacts[$i]["gender"];
+            $contact_category=$contacts[$i]["category_id"];
+            if($contact_gender==1){
+                $contacts[$i]["gender"]="男性";
+            }elseif($contact_gender==2){
+                $contacts[$i]["gender"]="女性";
+            }elseif($contact_gender==3){
+                $contacts[$i]["gender"]="その他";
+            }
+            
+            if($contact_category==1){
+                $contacts[$i]["category_id"]="商品のお届けについて";
+            }elseif($contact_category==2){
+                $contacts[$i]["category_id"]="商品の交換について";
+            }elseif($contact_category==3){
+                $contacts[$i]["category_id"]="商品トラブル";
+            }elseif($contact_category==4){
+                $contacts[$i]["category_id"]="ショップへのお問い合わせ";
+            }elseif($contact_category==5){
+                $contacts[$i]["category_id"]="その他";
+            }
+        }
+
+        return view('admin',compact('contacts'));
+    }
+
+    public function search(Request $request){
+
+    }
+
+    public function registerShow(){
+        return view('auth.register');
+    }
+
+    public function register(RegisterRequest $request){
+
+    }
+
+    public function loginShow(){
+        return view('auth.login');
+    }
+
+    public function login(LoginRequest $request){
+
     }
 }

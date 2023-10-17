@@ -8,9 +8,12 @@
 @section('content')
 <h1>Admin</h1>
     <div class="container">
+    <form action="/admin/search" method="get">
+        @csrf
     <div class="search-form">
         <div class="name-email">
             <input name="name_email_search" type="text" class="name_email_search" placeholder="名前やメールアドレスを入力してください">
+            <input type="submit" value="🔍" class="search-button">
         </div>
         <div class="gender">
             <select name="gender_search" class="gender_search">
@@ -33,6 +36,35 @@
         <div class="date">
             <input type="date" name="date_search" class="date_search">
         </div>
+    </div>
+    <form action="/admin/search" method="get">
+    <div class="contacts-table">
+        <div class="above-table">
+            <div class="export">
+                Export
+            </div>
+        <div class="pagination-link">
+            {{$contacts->links()}}
+        </div>
+        </div>
+        <table cellspacing="0">
+            <tr>
+                <th>お名前</th>
+                <th>性別</th>
+                <th>メールアドレス</th>
+                <th>お問い合わせの種類</th>
+                <th></th>
+            </tr>
+            @foreach($contacts as $contact)
+            <tr>
+                <td>{{$contact['fullname']}}</td>
+                <td>{{$contact['gender']}}</td>
+                <td>{{$contact['email']}}</td>
+                <td>{{$contact['category_id']}}</td>
+                <td></td>
+            </th>
+            @endforeach
+        </table>
     </div>
 </div>
 @endsection

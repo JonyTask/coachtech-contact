@@ -10,11 +10,6 @@
     <form action="/confirm" method="post">
         @csrf
         <div class="form-area">
-            @if($errors->any())
-                @foreach($errors->all() as $error)
-                    {{$error}}
-                @endforeach
-            @endif
             <table cellpadding="10">
                 <tr>
                     <th>お名前<span>※</span></th>

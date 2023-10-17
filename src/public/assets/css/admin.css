@@ -16,10 +16,13 @@ h1{
 .search-form{
     display:flex;
     justify-content: space-between;
+    margin-bottom:50px;
+    align-items:center;
 }
 
 .name-email{
     width:30%;
+    display:flex;
 }
 
 .name_email_search{
@@ -28,13 +31,18 @@ h1{
 
 .name_email_search,
 .gender_search,
-.category_search,
-.date_search{
+.category_search{
     outline:none;
     border:1px solid #c0c0c0;
     padding:10px 30px;
     -webkit-appearance: none;
     appearance: none;
+}
+
+.date_search{
+    outline:none;
+    border:1px solid #c0c0c0;
+    padding:10px 30px;
 }
 
 .gender_search,
@@ -65,6 +73,73 @@ h1{
     pointer-events: none;
 }
 
-.date_search::-webkit-calendar-picker-indicator{
+.contacts-table{
+    border-collapse: collapse;
+}
+
+.contacts-table table,
+.contacts-table table tbody{
+    width:100%;
+}
+
+.contacts-table table{
+    border:solid 1px #c0c0c0;
+}
+
+th{
+    text-align:left;
+    background:#a0522d;
+    color:#fff;
+    padding:10px 30px;
+}
+
+td{
+    padding:20px 30px;
+    border-bottom:solid 1px #c0c0c0;
+}
+
+.above-table{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:40px;
+}
+
+.flex-1,
+.pagination-link p{
     display:none;
+}
+
+.pagination-link a,
+ span[aria-current="page"],
+ span[aria-label="&laquo;"]{
+    text-decoration:none;
+    display:inline-block;
+    height:15px;
+    width:15px;
+    padding:3px;
+    border:solid 1px #deb887;
+}
+
+svg{
+    width:15px;
+    height:24px;
+}
+
+.shadow-sm{
+    display:flex;
+    align-items:center;
+}
+
+span[aria-current="page"]{
+    background:#deb887;
+}
+
+span[aria-current="page"] span{
+    color:#fff;
+}
+
+.search-button{
+    outline:none;
+    border:none;
+    background:transparent;
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,9 @@ Route::post('/confirm',[IndexController::class,'confirm']);
 Route::post('/thanks',[IndexController::class,'store']);
 
 Route::get('/admin',[IndexController::class,'admin']);
+
+Route::get('/admin/search',[IndexController::class,'search']);
+
+Route::get('/register',[IndexController::class,'registerShow']);
+
+Route::get('/login',[IndexController::class,'loginShow']);

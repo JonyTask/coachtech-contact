@@ -35,4 +35,31 @@ class Contact extends Model
     public function getContent(){
         return optional($this->category)->content;
     }
+
+    public function scopeCategorySearch($query, $category_id)
+    {
+        if (!empty($category_id)) {
+            $query->where('category_id', $category_id);
+        }
+    }
+
+    public function scopeNameEmail($query,$nameEmail){
+        if(!empty($nameEmail)){
+            $query->where('fullname','like','%'. $nameEmail.'%');
+            $query->where('email','like','%'. $nameEmail.'%');
+        }
+    }
+
+    public function scopeGender($query,$gender){
+        if(!empty($gender)){
+            $query->where('gender',$gender);
+        }
+    }
+
+    public function scopeDate($query,$date){
+        if(!empty($date)){
+            $query->where('create_at','like','%'.$date.'%');
+        }
+    }
 }
+
