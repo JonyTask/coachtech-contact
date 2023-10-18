@@ -15,5 +15,5 @@ QA確認テスト用
 ##使用技術<br>
 Laravel 8.83.27
 
-##ER図
+##ER図<br>
 ![ER図](ER.drawio.png)
