@@ -122,7 +122,7 @@ textarea{
     border-width: 10px 10px 0 10px;
     border-color: orange transparent transparent transparent;
     position: absolute;
-    top: 30%;
+    top: 50%;
     right: 52%;
     transform: translateY(-50%);
     pointer-events: none;

@@ -49,7 +49,7 @@
                         </div></br>
                         <div class="error-message">
                             @error('gender')
-                            {{$message}}
+                                {{$message}}
                             @enderror
                         </div>
                     </td>
@@ -60,7 +60,7 @@
                         <input type="email" name="email" placeholder="test@example.com" value="{{old('email')}}">
                         <div class="error-message">
                             @error('email')
-                            {{$message}}
+                                {{$message}}
                             @enderror
                         </div>
                     </td>
@@ -77,7 +77,7 @@
                         </div>
                     <div class="error-message">
                         @if($errors->has('first-three') || $errors->has('second-three') || $errors->has('third-three') )
-                        電話番号を入力してください
+                            電話番号を入力してください
                         @endif
                     </div>
                     </td>
@@ -88,7 +88,7 @@
                         <input type="text" name="address" placeholder="例）東京都渋谷区千駄ヶ谷1-2-3" value="{{old('address')}}">
                         <div class="error-message">
                             @error('address')
-                            {{$message}}
+                                {{$message}}
                             @enderror
                         </div>
                     </td>

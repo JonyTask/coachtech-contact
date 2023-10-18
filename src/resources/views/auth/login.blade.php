@@ -17,18 +17,18 @@
             <p>メールアドレス</p>
             <input name="email" type="email" placeholder="例: test@exapmple.com" value="{{old('email')}}">
             <div class="error-message">
-            @error('email')
-                {{$message}}
-            @enderror
+                @error('email')
+                    {{$message}}
+                @enderror
             </div>
         </div>
         <div class="login-item">
             <p>パスワード</p>
             <input name="password" type="password" placeholder="例: coachtech1106">
             <div class="error-message">
-            @error('password')
-                {{$message}}
-            @enderror
+                @error('password')
+                    {{$message}}
+                @enderror
             </div>
         </div>
         <div class="login-button">
