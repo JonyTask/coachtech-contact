@@ -25,7 +25,8 @@ header p{
     font-size:15px;
 }
 
-.link-area a{
+.link-area a,
+.link-area button{
     display:inline-block;
     padding:10px 20px;
     background:#f5f5f5;

@@ -11,21 +11,8 @@ use App\Models\Contact;
 
 class IndexController extends Controller
 {
-    public function index(Request $request){
-        $params=[
-            'familyName'=> $request->session()->get('family-name'),
-            'firstName'=> $request->session()->get('first-name'),
-            'gender'=> $request->session()->get('gender'),
-            'email'=> $request->session()->get('email'),
-            'firstThree'=> $request->session()->get('first-three'),
-            'secondThree'=> $request->session()->get('second-three'),
-            'thirdThree'=> $request->session()->get('third-three'),
-            'address'=> $request->session()->get('address'),
-            'building'=> $request->session()->get('building'),
-            'category_id'=> $request->session()->get('category_id'),
-            'detail'=> $request->session()->get('detail'),
-        ];
-        return view('index',$params);
+    public function index(){
+        return view('index');
     }
 
     public function confirm(ContactRequest $request){
@@ -88,24 +75,37 @@ class IndexController extends Controller
             }elseif($contact_gender==3){
                 $contacts[$i]["gender"]="その他";
             }
-            
-            if($contact_category==1){
-                $contacts[$i]["category_id"]="商品のお届けについて";
-            }elseif($contact_category==2){
-                $contacts[$i]["category_id"]="商品の交換について";
-            }elseif($contact_category==3){
-                $contacts[$i]["category_id"]="商品トラブル";
-            }elseif($contact_category==4){
-                $contacts[$i]["category_id"]="ショップへのお問い合わせ";
-            }elseif($contact_category==5){
-                $contacts[$i]["category_id"]="その他";
-            }
         }
 
         return view('admin',compact('contacts'));
     }
 
     public function search(Request $request){
+        //where('fullname','like','%'.$request->name_email_search.'%')->Where('email','like','%'.$request->name_email_search.'%')->Where('category_id',$request->category_search)->Where('created_at','like','%'.$request->date_search.'%')
+        if(isset($request->gender_search) && isset($request->category_search) && isset($request->date_search)){
+            $contacts=Contact::where('gender',$request->gender_search)->where('category_id',$request->category_search)->where('created_at','like','%'.$request->date_search.'%')->Paginate(10);
+        }elseif(isset($request->name_email_search)){
+            $contacts=Contact::where('fullname','like','%'.$request->name_email_search.'%')->orWhere('email','like','%'.$request->name_email_search.'%')->Paginate(10);
+        }elseif(!isset($request->date_search)){
+            $contacts=Contact::where('gender',$request->gender_search)->where('category_id',$request->category_search)->Paginate(10);
+        }elseif(!isset($request->gender_search)){
+            $contacts=Contact::where('category_id',$request->category_search)->where('created_at','like','%'.$request->date_search.'%')->Paginate(10);
+        }elseif(!isset($request->category_search)){
+            $contacts=Contact::where('gender',$request->gender_search)->where('created_at','like','%'.$request->date_search.'%')->Paginate(10);
+        }
 
+        for($i=0;$i<count($contacts);$i++){
+            $contact_gender=$contacts[$i]["gender"];
+            $contact_category=$contacts[$i]["category_id"];
+            if($contact_gender==1){
+                $contacts[$i]["gender"]="男性";
+            }elseif($contact_gender==2){
+                $contacts[$i]["gender"]="女性";
+            }elseif($contact_gender==3){
+                $contacts[$i]["gender"]="その他";
+            }
+        }
+
+        return view('admin',compact('contacts'));
     }
 }

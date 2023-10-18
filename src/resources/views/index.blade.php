@@ -76,15 +76,9 @@
                         <input  name="third-three" value="{{old('third-three')}}">
                         </div>
                     <div class="error-message">
-                        @error('first-three')
-                        {{$message}}
-                        @enderror
-                        @error('second-three')
-                        {{$message}}
-                        @enderror
-                        @error('third-three')
-                        {{$message}}
-                        @enderror
+                        @if($errors->has('first-three') || $errors->has('second-three') || $errors->has('third-three') )
+                        電話番号を入力してください
+                        @endif
                     </div>
                     </td>
                 </tr>
@@ -115,7 +109,12 @@
                             <option value="商品トラブル">3.商品トラブル</option>
                             <option value="ショップへのお問い合わせ">4.ショップへのお問い合わせ</option>
                             <option value="その他">5.その他</option>
-                        </select>
+                        </select></br>
+                        <div class="error-message">
+                            @error('category_id')
+                                {{$message}}
+                            @enderror
+                        </div>
                     </td>
                 </tr>
                 <tr>
