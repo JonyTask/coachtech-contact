@@ -9,13 +9,13 @@
     @if(Auth::check())
         <form action="/logout" method="post">
             @csrf
-            <button type="submit">Logout</button>
+            <button type="submit" class="logout">Logout</button>
         </form>
     @endif
 @endsection
 
 @section('content')
-<h1>Admin</h1>
+<h1 class="page-title">Admin</h1>
 <div class="container">
     <form action="/admin/search" method="get">
     @csrf
@@ -59,11 +59,11 @@
         </div>
         <table cellspacing="0">
             <tr>
-                <th>お名前</th>
-                <th>性別</th>
-                <th>メールアドレス</th>
-                <th>お問い合わせの種類</th>
-                <th></th>
+                <th class="column-title">お名前</th>
+                <th class="column-title">性別</th>
+                <th class="column-title">メールアドレス</th>
+                <th class="column-title">お問い合わせの種類</th>
+                <th class="column-title"></th>
             </tr>
             @foreach($contacts as $contact)
                 <tr>
@@ -80,7 +80,7 @@
             @endforeach
         </table>
         <div class="reset">
-            <a href="/admin">リセット</a>
+            <a href="/admin" class="reset-link">リセット</a>
         </div>
     </div>
 </div>

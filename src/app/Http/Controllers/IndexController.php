@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
-use App\Http\Requests\RegisterRequest;
-use App\Http\Requests\LoginRequest;
-use App\Models\Category;
 use App\Models\Contact;
 
 class IndexController extends Controller
@@ -81,7 +78,6 @@ class IndexController extends Controller
     }
 
     public function search(Request $request){
-        //where('fullname','like','%'.$request->name_email_search.'%')->Where('email','like','%'.$request->name_email_search.'%')->Where('category_id',$request->category_search)->Where('created_at','like','%'.$request->date_search.'%')
         if(isset($request->gender_search) && isset($request->category_search) && isset($request->date_search)){
             $contacts=Contact::where('gender',$request->gender_search)->where('category_id',$request->category_search)->where('created_at','like','%'.$request->date_search.'%')->Paginate(10);
         }elseif(isset($request->name_email_search)){

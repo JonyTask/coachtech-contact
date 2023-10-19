@@ -1,11 +1,11 @@
-body{
+.body-area{
     background:#fff;
     margin:0;
     padding:0;
     width:100%;
 }
 
-header{
+.header-area{
     padding:10px 40px;
     text-align:center;
     position:relative;
@@ -13,7 +13,7 @@ header{
     background:#fff;
 }
 
-header p{
+.header-title{
     font-size:25px;
     color:#deb887;
 }
@@ -25,16 +25,6 @@ header p{
     font-size:15px;
 }
 
-.link-area a,
-.link-area button{
-    display:inline-block;
-    padding:10px 20px;
-    background:#f5f5f5;
-    color:#deb887;
-    text-decoration:none;
-    border:solid 1px #deb887;
-}
-
-main{
+.main-area{
     padding:30px 50px;
 }

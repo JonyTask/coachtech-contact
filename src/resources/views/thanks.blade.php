@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="back-title">
-        <p>Thank you</p>
+        <p class="back-title">Thank you</p>
     </div>
     <div class="front-area">
         <p class="thanks">お問い合わせありがとうございました</p>

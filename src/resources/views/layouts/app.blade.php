@@ -7,12 +7,12 @@
     <title>Document</title>
     @yield('css')
 </head>
-<body>
-    <header>
-        <p>FashionablyLate</p>
+<body class="body-area">
+    <header class="header-index">
+        <p class="header-title">FashionablyLate</p>
     </header>
 
-    <main>
+    <main class="main-area">
         @yield('content')
     </main>
 </body>

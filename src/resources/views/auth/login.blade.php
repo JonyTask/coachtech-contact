@@ -5,7 +5,7 @@
 @endsection
 
 @section('header')
-    <a href="/register" class="login">Register</a>
+    <a href="/register" class="toRegister">Register</a>
 @endsection
 
 @section('content')

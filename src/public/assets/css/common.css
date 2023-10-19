@@ -1,11 +1,11 @@
-body{
+.body-area{
     background:#fff;
     margin:0;
     padding:0;
     width:100%;
 }
 
-header{
+.header-index{
     padding:10px 40px;
     text-align:center;
     position:relative;
@@ -13,11 +13,11 @@ header{
     background:#fff;
 }
 
-header p{
+.header-title{
     font-size:25px;
     color:#deb887;
 }
 
-main{
+.main-area{
     padding:30px 50px;
 }

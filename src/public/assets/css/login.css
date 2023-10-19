@@ -18,6 +18,15 @@ h1{
     margin-bottom:10px;
 }
 
+.toRegister{
+    display:inline-block;
+    padding:10px 20px;
+    background:#f5f5f5;
+    color:#deb887;
+    text-decoration:none;
+    border:solid 1px #deb887;
+}
+
 .login-form{
     width:60%;
     margin:0 auto;
