@@ -101,7 +101,8 @@
                 </tr>
                 <tr class="table-line">
                     <th class="column-title">お問い合わせの種類<span class="attention">※</span></th>
-                    <td id="category" class="table-cell">
+                    <td class="table-cell">
+                        <div id="category">
                         <select class="input-area category-select" name="category_id" value="{{old('category_id')}}">
                             <option selected disabled>選択してください</option>
                             <option value="商品のお届けについて">1.商品のお届けについて</option>
@@ -109,7 +110,8 @@
                             <option value="商品トラブル">3.商品トラブル</option>
                             <option value="ショップへのお問い合わせ">4.ショップへのお問い合わせ</option>
                             <option value="その他">5.その他</option>
-                        </select></br>
+                        </select>
+                        </div>
                         <div class="error-message">
                             @error('category_id')
                                 {{$message}}
@@ -118,7 +120,7 @@
                     </td>
                 </tr>
                 <tr class="table-line">
-                    <th id="align-up">お問い合わせ内容<span class="attention">※</span></th>
+                    <th id="align-up" class="column-title">お問い合わせ内容<span class="attention">※</span></th>
                     <td id="detail" class="table-cell">
                         <textarea class="input-area detail-text" name="detail" placeholder="お問い合わせ内容をご記載ください" value="{{old('detail')}}"></textarea>
                         <div class="error-message">

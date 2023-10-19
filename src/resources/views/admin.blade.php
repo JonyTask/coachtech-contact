@@ -71,7 +71,7 @@
                     <td class="gender_get">{{$contact['gender']}}</td>
                     <td class="email_get">{{$contact['email']}}</td>
                     <td class="category_get">{{$contact->category->getCategory()}}</td>
-                    <td>
+                    <td class="detail_get">
                         <div class="show-detail">
                             詳細
                         </div>
