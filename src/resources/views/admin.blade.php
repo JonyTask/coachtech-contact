@@ -3,6 +3,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{asset('assets/css/admin.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 @endsection
 
 @section('header')
@@ -57,7 +58,7 @@
                 {{$contacts->links()}}
             </div>
         </div>
-        <table cellspacing="0">
+        <table  class="contacts-database" cellspacing="0">
             <tr>
                 <th class="column-title">お名前</th>
                 <th class="column-title">性別</th>
@@ -67,18 +68,68 @@
             </tr>
             @foreach($contacts as $contact)
                 <tr>
-                    <td class="fullname_get">{{$contact['fullname']}}</td>
-                    <td class="gender_get">{{$contact['gender']}}</td>
-                    <td class="email_get">{{$contact['email']}}</td>
-                    <td class="category_get">{{$contact->category->getCategory()}}</td>
-                    <td class="detail_get">
-                        <div class="show-detail">
+                    <td class="fullname_get{{$contact['id']}} fullname_get">{{$contact['fullname']}}</td>
+                    <td class="gender_get{{$contact['id']}} gender_get">{{$contact['gender']}}</td>
+                    <td class="email_get{{$contact['id']}} email_get">{{$contact['email']}}</td>
+                    <td class="category_get{{$contact['id']}} category_get">{{$contact->category->getCategory()}}</td>
+                    <td class="detail_get{{$contact['id']}} detail_get">
+                        <div class="show-detail" id="{{$contact['id']}}">
                             詳細
                         </div>
                     </td>
+                    <div class="hidden-area">
+                        <p id="{{$contact['tell']}}" class="tell_get{{$contact['id']}}"></p>
+                        <p id="{{$contact['address']}}" class="address_get{{$contact['id']}}">
+                        <input id="{{$contact['building']}}" class="building_get{{$contact['id']}}">
+                        <input id="{{$contact['detail']}}" class="detail_get{{$contact['id']}}">
+                    </div>
                 </tr>
             @endforeach
         </table>
+        <div class="modal">
+            <div class="close-button">
+                ×
+            </div>
+        <table class="modal-table">
+            <tr>
+                <th class="line-title">お名前</th>
+                <td class="fullname-modal modal-cell"></td>
+            </tr>
+            <tr>
+                <th class="line-title">性別</th>
+                <td class="gender-modal modal-cell"></td>
+            </tr>
+            <tr>
+                <th class="line-title">メールアドレス</th>
+                <td class="email-modal modal-cell"></td>
+            </tr>
+            <tr>
+                <th class="line-title">電話番号</th>
+                <td class="tell-modal modal-cell"></td>
+            </tr>
+            <tr>
+                <th class="line-title">住所</th>
+                <td class="address-modal modal-cell"></td>
+            </tr>
+            <tr>
+                <th class="line-title">建物名</th>
+                <td class="building-modal modal-cell"></td>
+            </tr>
+            <tr>
+                <th class="line-title">お問い合わせの種類</th>
+                <td class="category-modal modal-cell"></td>
+            </tr>
+            <tr>
+                <th class="line-title detail-title">お問い合わせ内容</th>
+                <td class="detail-modal modal-cell"><textarea class="detail-text-modal"></textarea></td>
+            </tr>
+        </table>
+        <div class="delete-area">
+            <form action="/admin/delete" method="post">
+                <button class="delete-button" type="submit">削除</button>
+            </form>
+        </div>
+        </div>
         <div class="reset">
             <a href="/admin" class="reset-link">リセット</a>
         </div>

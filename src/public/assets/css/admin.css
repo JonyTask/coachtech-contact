@@ -85,12 +85,11 @@
     border-collapse: collapse;
 }
 
-.contacts-table table,
-.contacts-table table tbody{
+.contacts-database{
     width:100%;
 }
 
-.contacts-table table{
+.contacts-database{
     border:solid 1px #c0c0c0;
 }
 
@@ -169,7 +168,6 @@ span[aria-current="page"] span{
     background:#f5f5f5;
     color:#deb887;
     border:solid 1px #deb887;
-    padding:5px 10px;
     text-align:center;
 }
 
@@ -186,3 +184,64 @@ span[aria-current="page"] span{
     background:#8b4513;
     height:unset;
 }
+
+.hidden-area{
+    display:none;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding:80px 60px;
+    background:#c0c0c0;
+}
+
+.close-button{
+    color:#fff;
+    position:absolute;
+    right:40px;
+    top:40px;
+    cursor:pointer;
+}
+
+.line-title{
+    text-align:left;
+    width:250px;
+    color:#fff;
+}
+
+.detail-title{
+    vertical-align: top;
+    color:#fff;
+}
+
+.modal-cell{
+    width:350px;
+    padding:10px 15px;
+    color:#fff;
+}
+
+.detail-text-modal{
+    outline:none;
+    resize:none;
+    border:none;
+    background:transparent;
+    font-family:sans-serif;
+}
+
+.delete-area{
+    text-align:center;
+    margin-top:40px;
+}
+
+.delete-button{
+    padding:10px 20px;
+    background:red;
+    color:#fff;
+    outline:none;
+    border:solid 1px #fff;
+}
+

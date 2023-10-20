@@ -78,17 +78,26 @@ class IndexController extends Controller
     }
 
     public function search(Request $request){
-        if(isset($request->gender_search) && isset($request->category_search) && isset($request->date_search)){
-            $contacts=Contact::where('gender',$request->gender_search)->where('category_id',$request->category_search)->where('created_at','like','%'.$request->date_search.'%')->Paginate(10);
-        }elseif(isset($request->name_email_search)){
-            $contacts=Contact::where('fullname','like','%'.$request->name_email_search.'%')->orWhere('email','like','%'.$request->name_email_search.'%')->Paginate(10);
-        }elseif(!isset($request->date_search)){
-            $contacts=Contact::where('gender',$request->gender_search)->where('category_id',$request->category_search)->Paginate(10);
-        }elseif(!isset($request->gender_search)){
-            $contacts=Contact::where('category_id',$request->category_search)->where('created_at','like','%'.$request->date_search.'%')->Paginate(10);
-        }elseif(!isset($request->category_search)){
-            $contacts=Contact::where('gender',$request->gender_search)->where('created_at','like','%'.$request->date_search.'%')->Paginate(10);
+        $name_email_search=$request->name_email_search;
+        $gender_search=$request->gender_search;
+        $category_search=$request->category_search;
+        $date_search=$request->date_search;
+
+        $query=Contact::query();
+
+        if(!empty($name_email_search)){
+            $query->where('fullname','like','%'.$name_email_search.'%')->orWhere('email','like','%'.$name_email_search.'%');
         }
+        if(!empty($gender_search)){
+            $query->where('gender',$gender_search);
+        }
+        if(!empty($category_search)){
+            $query->where('category_id',$category_search);
+        }
+        if(!empty($date_search)){
+            $query->where('created_at','%'.$date_search.'%');
+        }
+        $contacts=$query->Paginate(10);
 
         for($i=0;$i<count($contacts);$i++){
             $contact_gender=$contacts[$i]["gender"];
