@@ -78,10 +78,10 @@
                         </div>
                     </td>
                     <div class="hidden-area">
-                        <p id="{{$contact['tell']}}" class="tell_get{{$contact['id']}}"></p>
-                        <p id="{{$contact['address']}}" class="address_get{{$contact['id']}}">
-                        <input id="{{$contact['building']}}" class="building_get{{$contact['id']}}">
-                        <input id="{{$contact['detail']}}" class="detail_get{{$contact['id']}}">
+                        <p class="tell_get{{$contact['id']}}">{{$contact['tell']}}</p>
+                        <p class="address_get{{$contact['id']}}">{{$contact['address']}}</p>
+                        <p class="building_get{{$contact['id']}}">{{$contact['building']}}</p>
+                        <p class="detail_get{{$contact['id']}}">{{$contact['detail']}}</p>
                     </div>
                 </tr>
             @endforeach
