@@ -126,6 +126,8 @@
         </table>
         <div class="delete-area">
             <form action="/admin/delete" method="post">
+                @csrf
+                <input name="id" type="hidden" value="" class="delete-id">
                 <button class="delete-button" type="submit">削除</button>
             </form>
         </div>

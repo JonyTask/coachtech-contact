@@ -33,3 +33,5 @@ Route::get('/register',[AuthController::class,'registerShow']);
 
 Route::get('/login',[AuthController::class,'loginShow'])->name('login');
 
+Route::post('/admin/delete',[IndexController::class,'delete']);
+

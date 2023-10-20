@@ -113,4 +113,9 @@ class IndexController extends Controller
 
         return view('admin',compact('contacts'));
     }
+
+    public function delete(Request $request){
+        Contact::find($request->id)->delete();
+        return redirect('/admin');
+    }
 }

@@ -19,6 +19,8 @@ $('.show-detail').click(function(){
     var category = $('.category_get'+contact_id).text();
     var detail = $('.detail_get'+contact_id).text();
 
+    $('.delete-id').attr('value',contact_id);
+
     $('.fullname-modal').text(fullname);
     $('.gender-modal').text(gender);
     $('.email-modal').text(email);
