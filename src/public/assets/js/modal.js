@@ -1,12 +1,12 @@
 $('.show-detail').click(function(){
-    $('.fullname-modal').textContent = '';
-    $('.gender-modal').textContent = '';
-    $('.email-modal').textContent = '';
-    $('.tell-modal').textContent = '';
-    $('.address-modal').textContent = '';
-    $('.building-modal').textContent = '';
-    $('.category-modal').textContent = '';
-    $('.detail-modal').textContent = '';
+    $('.fullname-modal').text('');
+    $('.gender-modal').text('');
+    $('.email-modal').text('');
+    $('.tell-modal').text('');
+    $('.address-modal').text('');
+    $('.building-modal').text('');
+    $('.category-modal').text('');
+    $('.detail-modal').text('');
 
     var contact_id = $(this).attr('id');
 
@@ -19,14 +19,16 @@ $('.show-detail').click(function(){
     var category = $('.category_get'+contact_id).text();
     var detail = $('.detail_get'+contact_id).text();
 
-    $('.fullname-modal').textContent = fullname;
-    $('.gender-modal').textContent = gender;
-    $('.email-modal').textContent = email;
-    $('.tell-modal').textContent = tell;
-    $('.address-modal').textContent = address;
-    $('.building-modal').textContent = building;
-    $('.category-modal').textContent = category;
-    $('.detail-modal').textContent = detail;
+    console.log(fullname);
+
+    $('.fullname-modal').text(fullname);
+    $('.gender-modal').text(gender);
+    $('.email-modal').text(email);
+    $('.tell-modal').text(tell);
+    $('.address-modal').text(address);
+    $('.building-modal').text(building);
+    $('.category-modal').text(category);
+    $('.detail-modal').text(detail);
 
     $('.modal').css({'display':'block'});
 })
@@ -34,7 +36,3 @@ $('.show-detail').click(function(){
 $('.close-button').click(function(){
     $('.modal').css({'display':'none'});
 })
-
-/*
-
-    */

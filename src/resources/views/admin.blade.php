@@ -72,7 +72,7 @@
                     <td class="gender_get{{$contact['id']}} gender_get">{{$contact['gender']}}</td>
                     <td class="email_get{{$contact['id']}} email_get">{{$contact['email']}}</td>
                     <td class="category_get{{$contact['id']}} category_get">{{$contact->category->getCategory()}}</td>
-                    <td class="detail_get{{$contact['id']}} detail_get">
+                    <td class="detail_get">
                         <div class="show-detail" id="{{$contact['id']}}">
                             詳細
                         </div>
