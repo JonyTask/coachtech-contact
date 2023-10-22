@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 
+
 class IndexController extends Controller
 {
     public function index(){
@@ -23,13 +24,52 @@ class IndexController extends Controller
         $thirdTel=implode(",",$request->only(['third-three']));
         $tell=$firstTel.$secondTel.$thirdTel;
 
+        $gender=$request->gender;
+        $email=$request->email;
+        $address=$request->address;
+        $building=$request->building;
+        $category=$request->category_id;
+        $detail=$request->detail;
+
+        $request->session()->put([
+            'familyName'=>$familyName,
+            'firstName'=>$firstName,
+            'gender'=>$gender,
+            'email'=>$email,
+            'firstTel'=>$firstTel,
+            'secondTel'=>$secondTel,
+            'thirdTel'=>$thirdTel,
+            'address'=>$address,
+            'building'=>$building,
+            'category_id'=>$category,
+            'detail'=>$detail
+        ]);
+
         $contact=$request->only(['gender','email','first-three','second-three','third-three','address','building','category_id','detail']);
 
 
         return view('confirm',['contact'=>$contact,'fullname'=>$fullName,'tell'=>$tell]);
     }
 
+    public function fix(Request $request){
+        $request->session()->flash('_old_input',[
+            'familyName' => $request->session()->get('familyName'),
+            'firstName' => $request->session()->get('firstName'),
+            'gender' => $request->session()->get('gender'),
+            'email' => $request->session()->get('email'),
+            'firstTel' => $request->session()->get('firstTel'),
+            'secondTel' => $request->session()->get('secondTel'),
+            'thirdTel' => $request->session()->get('thirdTel'),
+            'address' =>$request->session()->get('address'),
+            'building' => $request->session()->get('building'),
+            'category_id' => $request->session()->get('category_id'),
+            'detail' => $request->session()->get('detail'),
+        ]);
+        return redirect('/');
+    }
+
     public function store(Request $request){
+
         $genderName=implode(",",$request->only(['gender']));
         if($genderName=="男性"){
             $gender=1;
@@ -51,6 +91,8 @@ class IndexController extends Controller
         }elseif($categoryContent=="その他"){
             $category_id=5;
         }
+
+        $request->session()->flush();
 
         $form=$request->all();
         $form["gender"]=$gender;

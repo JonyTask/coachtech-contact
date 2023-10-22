@@ -61,7 +61,12 @@
             </table>
             <div class="buttons-area">
                 <button class="toThanks" type="submit">送信</button>
-                <a class="goBack"href="/">修正</a>
+            </div>
+        </form>
+        <form action="/confirm/fix" method="get">
+            @csrf
+            <div class="fix-area">
+                <button class="toFix" type="submit">修正</button>
             </div>
         </form>
     </div>

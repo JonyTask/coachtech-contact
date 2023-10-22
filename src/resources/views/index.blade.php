@@ -16,8 +16,8 @@
                     <th class="column-title">お名前<span class="attention">※</span></th>
                     <td id="name" class="table-cell">
                         <div class="name-separate">
-                        <input class="input-area" type="text" name="family-name" placeholder="例）山田" value="{{old('family-name')}}">
-                        <input class="input-area" type="text" name="first-name" placeholder="例）太郎" value="{{old('first-name')}}">
+                        <input class="input-area" type="text" name="family-name" placeholder="例）山田" value="{{old('familyName')}}">
+                        <input class="input-area" type="text" name="first-name" placeholder="例）太郎" value="{{old('firstName')}}">
                         </div>
                         <div class="error-message name_error">
                             <div class="family-name_error">
@@ -70,11 +70,11 @@
                     <th class="column-title">電話番号<span class="attention">※</span></th>
                     <td id="tel" class="table-cell">
                         <div id="tel-align">
-                        <input class="input-area tel-input" name="first-three" value="{{old('first-three')}}">
+                        <input class="input-area tel-input" name="first-three" value="{{old('firstTel')}}">
                         <span class="tell-interface">-</span>
-                        <input class="input-area tel-input" name="second-three" value="{{old('second-three')}}">
+                        <input class="input-area tel-input" name="second-three" value="{{old('secondTel')}}">
                         <span class="tell-interface">-</span>
-                        <input class="input-area tel-input" name="third-three" value="{{old('third-three')}}">
+                        <input class="input-area tel-input" name="third-three" value="{{old('thirdTel')}}">
                         </div>
                     <div class="error-message">
                         @if($errors->has('first-three') || $errors->has('second-three') || $errors->has('third-three') )

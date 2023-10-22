@@ -23,6 +23,8 @@ Route::get('/',[IndexController::class,'index']);
 
 Route::post('/confirm',[IndexController::class,'confirm']);
 
+Route::get('/confirm/fix',[IndexController::class,'fix']);
+
 Route::post('/thanks',[IndexController::class,'store']);
 
 Route::middleware('auth')->group(function(){Route::get('/admin', [IndexController::class, 'admin']);});
