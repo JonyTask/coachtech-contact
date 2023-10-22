@@ -55,7 +55,7 @@
                 エクスポート
             </div>
             <div class="pagination-link">
-                {{$contacts->links()}}
+                {{$contacts->appends(request()->query())->links()}}
             </div>
         </div>
         <table  class="contacts-database" cellspacing="0">
