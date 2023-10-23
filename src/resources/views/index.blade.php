@@ -123,7 +123,7 @@
                 <tr class="table-line">
                     <th id="align-up" class="column-title">お問い合わせ内容<span class="attention">※</span></th>
                     <td id="detail" class="table-cell">
-                        <textarea class="input-area detail-text" name="detail" placeholder="お問い合わせ内容をご記載ください" value="{{old('detail')}}"></textarea>
+                        <textarea class="input-area detail-text" name="detail" placeholder="お問い合わせ内容をご記載ください">{{old('detail')}}</textarea>
                         <div class="error-message">
                             @error('detail')
                                 {{$message}}
