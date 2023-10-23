@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DownloadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,4 +37,6 @@ Route::get('/register',[AuthController::class,'registerShow']);
 Route::get('/login',[AuthController::class,'loginShow'])->name('login');
 
 Route::post('/admin/delete',[IndexController::class,'delete']);
+
+Route::get('/admin/export',[DownloadController::class,'Download']);
 

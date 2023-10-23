@@ -51,9 +51,10 @@
     </form>
     <div class="contacts-table">
         <div class="above-table">
-            <div class="export">
-                エクスポート
-            </div>
+            <form action="/admin/export" method="get">
+                @csrf
+                <button type="submit" class="export">エクスポート</button>
+            </form>
             <div class="pagination-link">
                 {{$contacts->appends(request()->query())->links()}}
             </div>

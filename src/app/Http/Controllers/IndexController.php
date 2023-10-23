@@ -106,7 +106,6 @@ class IndexController extends Controller
 
         for($i=0;$i<count($contacts);$i++){
             $contact_gender=$contacts[$i]["gender"];
-            $contact_category=$contacts[$i]["category_id"];
             if($contact_gender==1){
                 $contacts[$i]["gender"]="男性";
             }elseif($contact_gender==2){
